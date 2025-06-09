@@ -1,0 +1,36 @@
+/**
+* vop0 hdmi
+* vop1 edp
+*/
+
+#include "ido-rk3568-evb3568v1-edp-1920x1080.dts"
+
+&hdmi {
+	status = "okay";
+};
+
+&hdmi_in_vp0 {
+	status = "okay";
+};
+
+&hdmi_in_vp1 {
+	status = "disabled";
+};
+
+&route_hdmi {
+	status = "okay";
+	connect = <&vp0_out_hdmi>;
+};
+
+&edp_in_vp0 {
+	status = "disabled";
+};
+
+&edp_in_vp1 {
+	status = "okay";
+};
+
+&route_edp {
+    status = "okay";
+	connect = <&vp1_out_edp>;
+};

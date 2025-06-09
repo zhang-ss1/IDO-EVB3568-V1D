@@ -1,0 +1,36 @@
+#include "ido-rk3568-evb3568v1-lvds-1024x600.dts"
+
+&lvds {
+	status = "okay";
+};
+
+&lvds_in_vp1 {
+	status = "okay";
+};
+
+&lvds_in_vp2 {
+	status = "disabled";
+};
+
+&route_lvds {
+	status = "okay";
+	connect = <&vp1_out_lvds>;
+};
+
+&hdmi {
+	status = "okay";
+};
+
+&hdmi_in_vp0 {
+	status = "okay";
+};
+
+&hdmi_in_vp1 {
+	status = "disabled";
+};
+
+&route_hdmi {
+	status = "okay";
+	connect = <&vp0_out_hdmi>;
+};
+

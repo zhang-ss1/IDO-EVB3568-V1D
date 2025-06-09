@@ -1,0 +1,57 @@
+#include "ido-rk3568-evb3568v1-mipi1-1200x1920.dts"
+
+&hdmi {
+	status = "okay";
+};
+
+&hdmi_in_vp0 {
+	status = "okay";
+};
+
+&hdmi_in_vp1 {
+	status = "disabled";
+};
+
+&route_hdmi {
+	status = "disabled";
+	connect = <&vp0_out_hdmi>;
+};
+
+&hdmi_sound {
+	status = "okay";
+};
+
+&dsi1 {
+	status = "okay";
+};
+
+&dsi1_in_vp0 {
+	status = "disabled";
+};
+
+&dsi1_in_vp1 {
+	status = "okay";
+};
+
+&route_dsi1 {
+	status = "okay";
+	connect = <&vp1_out_dsi1>;
+};
+
+&i2c3 {
+	status = "okay";
+	clock-frequency = <100000>;
+	pinctrl-0 = <&i2c3m1_xfer>;
+
+	gt911@14 {
+		compatible = "goodix,gt9xx";
+		reg = <0x14>;
+		pinctrl-names = "default";
+		pinctrl-0 = <&gtxx_gpio>;
+		goodix_irq_gpio = <&gpio3 RK_PB4 IRQ_TYPE_LEVEL_LOW>;
+		goodix_rst_gpio = <&gpio3 RK_PB3 GPIO_ACTIVE_HIGH>;
+		touchscreen-inverted-y;
+		touchscreen-swapped-x-y;
+		status = "okay";
+	};
+};

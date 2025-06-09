@@ -1,0 +1,35 @@
+#include "ido-rk3568-evb3568v1-mipi0-1200x1920.dts"
+
+&hdmi {
+	status = "okay";
+};
+
+&hdmi_in_vp0 {
+	status = "okay";
+};
+
+&hdmi_in_vp1 {
+	status = "disabled";
+};
+
+&route_hdmi {
+	status = "okay";
+	connect = <&vp0_out_hdmi>;
+};
+
+&dsi0 {
+	status = "okay";
+};
+
+&dsi0_in_vp0 {
+	status = "disabled";
+};
+
+&dsi0_in_vp1 {
+	status = "okay";
+};
+
+&route_dsi0 {
+	status = "okay";
+	connect = <&vp1_out_dsi0>;
+};
